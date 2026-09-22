@@ -167,6 +167,7 @@
 
     for (var i=0;i<lineas.length;i++){
       var l = lineas[i].replace(/^(\s*>)+\s?/, '');
+      if (/^\s*`{3,}\s*\w*\s*$/.test(l)) continue;   // cercas de bloque de código: no son texto
       var mCampo = l.match(RE_CAMPO);
       var mAviso = l.match(RE_AVISO);
       if (mAviso){
